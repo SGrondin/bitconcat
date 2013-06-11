@@ -1,0 +1,4 @@
+bitconcatJS
+===========
+
+Partial byte manipulation
