@@ -1,6 +1,6 @@
 # bitconcatJS
 
-A simple Javascript library to append and prepend up to 25 bits at a time to a bitstream. It will group full bits together into byte. Useful for compression and stream algorithms. More documentation and a lot of information about this project is available [here](http://simongrondin.name/?p=91).
+A simple Javascript library to append and prepend up to 25 bits at a time to a bitstream. It will group full bits together into bytes when possible. Useful for compression and stream algorithms. More documentation and a lot of information about this project is available [here](http://simongrondin.name/?p=91).
 
 ## Installation
 
