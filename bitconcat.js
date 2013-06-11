@@ -1,4 +1,4 @@
-"v0.1.0";
+"v0.2.0";
 (function(){
 	"use strict";
 	var _bitconcat = function(init){
@@ -36,7 +36,8 @@
 		}
 	};
 	_bitconcat.prototype.flushHeadBuffer = function(){
-		var buffer = 0;
+		var self = this,
+			buffer = 0;
 		for (var i=0,len=self._arr.length;i<len;i++){
 			buffer = self._arr[i] & ((1 << self._headNB) -1);
 			self._arr[i] = (self._headBuffer << (8 - self._headNB)) | (self._arr[i] >>> self._headNB);
@@ -51,16 +52,30 @@
 			self._tailBuffer &= (1 << (self._tailNB - 8)) - 1;
 			self._tailNB -= 8;
 		}
+		return self;
 	};
 	_bitconcat.prototype.getData = function(){
 		this.flushHeadBuffer();
 		return this._arr.slice(0);
 	};
+	_bitconcat.prototype.pad = function(){
+		var self = this;
+		this.flushHeadBuffer();
+		if (self._tailNB > 0){
+			self._arr.push(self._tailBuffer << (8 - self._tailNB));
+			self._tailBuffer = 0;
+			self._tailNB = 0;
+		}
+		return self;
+	};
+	_bitconcat.prototype.getNbBits = function(){
+		return (this._arr.length * 8) + this._headNB + this._tailNB;
+	};
 	
 	if (typeof module === "object" && typeof exports === "object"){//Node.js
-		exports.bitstream = _bitconcat;
+		exports.bitconcat = _bitconcat;
 	}else if (typeof window === "object" && window.window === window && typeof window.navigator === "object"){//Browser
-		window.bitstream = _bitconcat;
+		window.bitconcat = _bitconcat;
 	}
 })();
 

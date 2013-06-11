@@ -37,6 +37,10 @@ Now the instance contains 11111001, which is enough to form a full byte. getData
 bc.getData(); //Returns [249]
 ```
 
+Calling pad() will append just enough zeroes to create an additional full byte, only if there's a number of bits not divisible by 8.
+
+getNbBits() returns the number of bits in the instance.
+
 Note: Due to Javascript's limitations, it is not possible to append or prepend more than 25 bits at a time without losing data. Call prepend() and append() multiple times instead.
 
 Note: For optimal performance, when prepending bits, only call getData() once after prepending everything. Basically, do not alternate between calling prepend() and getData().
