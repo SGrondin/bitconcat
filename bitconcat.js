@@ -1,4 +1,3 @@
-"v0.2.0";
 (function(){
 	"use strict";
 	var _bitconcat = function(init){
@@ -73,7 +72,7 @@
 	};
 	
 	if (typeof module === "object" && typeof exports === "object"){//Node.js
-		exports.bitconcat = _bitconcat;
+		module.exports = _bitconcat;
 	}else if (typeof window === "object" && window.window === window && typeof window.navigator === "object"){//Browser
 		window.bitconcat = _bitconcat;
 	}

@@ -1,23 +1,25 @@
-# bitconcatJS
+# bitconcat
 
 A simple Javascript library to append and prepend up to 25 bits at a time to a bitstream. It will group bits together into bytes whenever possible. Useful for compression and stream algorithms. More documentation and a lot of information about this project is available [here](http://simongrondin.name/?p=91).
 
 ## Installation
 
-Simply place the bitconcat.js file in your project folder and include it:
+__Node__
 ```javascript
-var bitconcat = require(__dirname + "/bitconcat.js").bitconcat;
+npm install bitconcat
 ```
 __Browser__
-Just import it!
 ```html
-<script src="bitconcat.js" type="text/javascript"></script>
+<script src="bitconcat.min.js" type="text/javascript"></script>
 ```
 
 ## Usage
 
 Begin by creating an instance of bitconcat.
 ```javascript
+// If Node
+var bitconcat = require("bitconcat");
+
 var bc = new bitconcat();
 ```
 That instance can now be thought of as the efficient, mathematical equivalent of a string containing ones and zeroes.
@@ -63,4 +65,5 @@ bc.getData(); //Returns [185, 67, 51]
 ```
 
 A lot more examples and documentation is available [here](http://simongrondin.name/?p=91).
+
 

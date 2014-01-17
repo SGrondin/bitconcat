@@ -1,0 +1,28 @@
+{
+  "name": "bitconcat",
+  "version": "0.3.0",
+  "description": "Binary streams",
+  "main": "bitconcat.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SGrondin/bitconcat"
+  },
+  "keywords": [
+    "binary",
+    "bitfield",
+    "partial bytes"
+  ],
+  "author": {
+    "name": "Simon Grondin"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SGrondin/bitconcat/issues"
+  },
+  "devDependencies":{
+    "uglify-js": "*"
+  }
+}
