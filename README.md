@@ -9,6 +9,10 @@ __Node__
 npm install bitconcat
 ```
 __Browser__
+```
+bower install bitconcat
+```
+or
 ```html
 <script src="bitconcat.min.js" type="text/javascript"></script>
 ```
