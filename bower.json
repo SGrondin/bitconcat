@@ -1,0 +1,24 @@
+{
+  "name": "bitconcat",
+  "main": "bitconcat.js",
+  "version": "0.3.1",
+  "homepage": "https://github.com/SGrondin/bitconcat",
+  "authors": [
+    "SGrondin <github@simongrondin.name>"
+  ],
+  "description": "Binary streams",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "binary",
+    "bitfields",
+    "bits"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ]
+}
